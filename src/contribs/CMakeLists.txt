@@ -1,0 +1,4 @@
+ADD_SUBDIRECTORY (contribs-lib-test)
+ADD_SUBDIRECTORY (readindex)
+ADD_SUBDIRECTORY (searching)
+ADD_SUBDIRECTORY (benchmarker EXCLUDE_FROM_ALL)

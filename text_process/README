@@ -1,0 +1,15 @@
+To analysis ClueWeb data, please following these steps(all programs in src directory):
+1. Decompress all archives which will be analyzed
+2. Execute program compiled from CluewebParse.java, the main path arguments in code should be modified
+     variable origin_folder_path: refer to path of input archies directory
+     variable begin_subfoler_number: refer to the last four digits of begin subdirectory of corpus.
+              e.g., if original subdirectories of Clueweb are EN0001,EN0002,....,EN1000, 
+                    begin_subfoler_number should be 0001
+     variable end_subfoler_number: refer to the last four digits of last subdirectory of corpus.
+              e.g., for example above, end_subfoler_number could be 1000
+     variable output_folder_path: refer to the output directory for final result
+     variable debug_path: refer to the output directory for debug logs
+
+For Gov2, the steps are almost same. Just note begin_subfoler_number & end_subfoler_number should be the 
+last three digits of subdirectories. e.g., if subdirectories are GX000,GX001,...,GX200, values should be 
+000 and 200, respectively.
