@@ -1,0 +1,3664 @@
+rm -f HS_SegLRC_Compression 
+rm -f object/*
+g++ -std=c++0x -O3 -I../../../include -c main.cpp -o object/main.o
+g++ -std=c++0x -O3 -I../../../include -c ../../../include/ParaPFor.cpp -o object/ParaPFor.o
+g++ -std=c++0x -O3 object/main.o object/ParaPFor.o -o HS_SegLRC_Compression
+
+rm -f HS_SegLRC_Decompression
+nvcc -O3 HS_SegLRC_Decompression.cu -o HS_SegLRC_Decompression
+
+rm -f HS_SegLRC_Generator
+nvcc -O3 HS_SegLRC_Generator.cu -o HS_SegLRC_Generator
+
+rm -f HS_SegLRC_Intersection
+nvcc -O3 -I/home/naiyong/cudpp-2.2/include -L/home/naiyong/cudpp-2.2/lib/ -lcudpp HS_SegLRC_Intersection.cu -o HS_SegLRC_Intersection
+
+
+rm -f LRC_Compression 
+rm -f object/*
+g++ -std=c++0x -O3 -I../../../include -c main.cpp -o object/main.o
+g++ -std=c++0x -O3 -I../../../include -c ../../../include/ParaPFor.cpp -o object/ParaPFor.o
+g++ -std=c++0x -O3 object/main.o object/ParaPFor.o -o LRC_Compression
+
+rm -f LRC_Decompression
+nvcc -O3 LRC_Decompression.cu -o LRC_Decompression
+
+rm -f LRC_Generator
+nvcc -O3 LRC_Generator.cu -o LRC_Generator
+
+rm -f LRC_Intersection
+nvcc -O3 -I/home/naiyong/cudpp-2.2/include -L/home/naiyong/cudpp-2.2/lib/ -lcudpp LRC_Intersection.cu -o LRC_Intersection
+
+
+rm -f LRCSeg_Compression 
+rm -f object/*
+g++ -std=c++0x -O3 -I../../../include -c main.cpp -o object/main.o
+g++ -std=c++0x -O3 -I../../../include -c ../../../include/ParaPFor.cpp -o object/ParaPFor.o
+g++ -std=c++0x -O3 object/main.o object/ParaPFor.o -o LRCSeg_Compression
+
+rm -f LRCSeg_Decompression
+nvcc -O3 LRCSeg_Decompression.cu -o LRCSeg_Decompression
+
+rm -f LRCSeg_Generator
+nvcc -O3 LRCSeg_Generator.cu -o LRCSeg_Generator
+
+rm -f LRCSeg_Intersection
+nvcc -O3 -I/home/naiyong/cudpp-2.2/include -L/home/naiyong/cudpp-2.2/lib/ -lcudpp LRCSeg_Intersection.cu -o LRCSeg_Intersection
+
+
+rm -f NewPFD_Compression 
+rm -f object/*
+g++ -std=c++0x -O3 -I../../../include/ -c main.cpp -o object/main.o
+g++ -std=c++0x -O3 -I../../../include/ -c ../../../include//NewPFor.cpp -o object/NewPFor.o
+g++ -std=c++0x -O3 -I../../../include/ object/main.o object/NewPFor.o -o NewPFD_Compression
+
+rm -f NewPFD_Decompression
+nvcc -O3 NewPFD_Decompression.cu -o NewPFD_Decompression
+
+
+rm -f ParaPFD_Compression 
+rm -f object/*
+g++ -std=c++0x -O3 -I../../../include/ -c main.cpp -o object/main.o
+g++ -std=c++0x -O3 -I../../../include/ -c ../../../include//ParaPFor.cpp -o object/ParaPFor.o
+g++ -std=c++0x -O3 -I../../../include/ object/main.o object/ParaPFor.o -o ParaPFD_Compression
+
+rm -f ParaPFD_Decompression
+nvcc -O3 ParaPFD_Decompression.cu -o ParaPFD_Decompression
+
+rm -f ParaPFD_Intersection
+nvcc -O3 -I/home/naiyong/cudpp-2.2/include -L/home/naiyong/cudpp-2.2/lib/ -lcudpp ParaPFD_Intersection.cu -o ParaPFD_Intersection
+
+rm -f ParaPFD_Intersection
+nvcc -O3 -I/home/naiyong/cudpp-2.2/include -L/home/naiyong/cudpp-2.2/lib/ -lcudpp ParaPFD_Intersection.cu -o ParaPFD_Intersection
+
+
+rm -f SegLRC_Compression 
+rm -f object/*
+g++ -std=c++0x -O3 -I../../../include -c main.cpp -o object/main.o
+g++ -std=c++0x -O3 -I../../../include -c ../../../include/ParaPFor.cpp -o object/ParaPFor.o
+g++ -std=c++0x -O3 object/main.o object/ParaPFor.o -o SegLRC_Compression
+
+rm -f SegLRC_Decompression
+nvcc -O3 SegLRC_Decompression.cu -o SegLRC_Decompression
+
+rm -f SegLRC_Generator
+nvcc -O3 SegLRC_Generator.cu -o SegLRC_Generator
+
+rm -f SegLRC_Intersection
+nvcc -O3 -I/home/naiyong/cudpp-2.2/include -L/home/naiyong/cudpp-2.2/lib/ -lcudpp SegLRC_Intersection.cu -o SegLRC_Intersection
+
+
+bd
+SegLRC_Generator
+dataset = bd
+reading /media/indexDisk/naiyong/dataset/bd/bd.ind1
+reading /media/indexDisk/naiyong/dataset/bd/bd.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+10.000000%...
+20.000000%...
+30.000002%...
+40.000000%...
+50.000000%...
+60.000004%...
+70.000000%...
+80.000000%...
+90.000000%...
+SegLRC_Compression
+dataset = bd
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.23644
+
+SegLRC_Intersection
+dataset = bd
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/bd.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/bd.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 14752
+CPU time: 27.7089ms
+htod time: 401.533ms
+kernel time: 1538.98ms
+dtoh time: 312.692ms
+total time: 2280.92ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 11584
+CPU time: 21.7256ms
+htod time: 316.078ms
+kernel time: 1234.48ms
+dtoh time: 257.153ms
+total time: 1829.44ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 8664
+CPU time: 16.2964ms
+htod time: 236.449ms
+kernel time: 951.015ms
+dtoh time: 201.741ms
+total time: 1405.5ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 6144
+CPU time: 11.8531ms
+htod time: 168.531ms
+kernel time: 701.892ms
+dtoh time: 150.019ms
+total time: 1032.29ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 4079
+CPU time: 8.20756ms
+htod time: 112.216ms
+kernel time: 497.791ms
+dtoh time: 104.229ms
+total time: 722.444ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 2538
+CPU time: 5.49407ms
+htod time: 69.7643ms
+kernel time: 350.893ms
+dtoh time: 66.6662ms
+total time: 492.817ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 1492
+CPU time: 4.29873ms
+htod time: 41.4705ms
+kernel time: 251.744ms
+dtoh time: 40.4657ms
+total time: 337.979ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 826
+CPU time: 4.22209ms
+htod time: 23.6157ms
+kernel time: 187.861ms
+dtoh time: 23.7132ms
+total time: 239.412ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 444
+CPU time: 3.56413ms
+htod time: 13.0746ms
+kernel time: 152.459ms
+dtoh time: 13.6853ms
+total time: 182.783ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 235
+CPU time: 3.52597ms
+htod time: 7.53678ms
+kernel time: 134.707ms
+dtoh time: 8.41984ms
+total time: 154.19ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 120
+CPU time: 3.09745ms
+htod time: 4.34167ms
+kernel time: 124.425ms
+dtoh time: 5.3844ms
+total time: 137.248ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 61
+CPU time: 3.18418ms
+htod time: 2.62883ms
+kernel time: 117.111ms
+dtoh time: 3.80406ms
+total time: 126.728ms
+*********************************************
+checkSum: d5631
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 2419374
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = bd
+reading /media/indexDisk/naiyong/dataset/bd/bd.ind1
+reading /media/indexDisk/naiyong/dataset/bd/bd.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+10.000000%...
+20.000000%...
+30.000002%...
+40.000000%...
+50.000000%...
+60.000004%...
+70.000000%...
+80.000000%...
+90.000000%...
+HS256_SegLRC_Compression
+dataset = bd
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.06556
+
+HS256_SegLRC_Intersection
+dataset = bd
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/bd.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/bd.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 14752
+CPU time: 27.1585ms
+htod time: 289.033ms
+kernel time: 1524.47ms
+dtoh time: 313.777ms
+total time: 2154.44ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 11584
+CPU time: 21.4683ms
+htod time: 227.658ms
+kernel time: 1223.5ms
+dtoh time: 258.491ms
+total time: 1731.11ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 8664
+CPU time: 16.2257ms
+htod time: 170.168ms
+kernel time: 940.872ms
+dtoh time: 202.581ms
+total time: 1329.85ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 6144
+CPU time: 11.5236ms
+htod time: 121.007ms
+kernel time: 694.315ms
+dtoh time: 151.034ms
+total time: 977.878ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 4079
+CPU time: 7.95303ms
+htod time: 80.8702ms
+kernel time: 493.23ms
+dtoh time: 104.854ms
+total time: 686.908ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 2538
+CPU time: 5.43369ms
+htod time: 50.4953ms
+kernel time: 349.034ms
+dtoh time: 67.2037ms
+total time: 472.167ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 1492
+CPU time: 4.18447ms
+htod time: 29.9111ms
+kernel time: 250.735ms
+dtoh time: 40.7482ms
+total time: 325.579ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 826
+CPU time: 3.96524ms
+htod time: 16.8919ms
+kernel time: 186.191ms
+dtoh time: 23.7615ms
+total time: 230.81ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 444
+CPU time: 3.6701ms
+htod time: 9.4624ms
+kernel time: 151.339ms
+dtoh time: 13.9182ms
+total time: 178.39ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 235
+CPU time: 3.30971ms
+htod time: 5.28441ms
+kernel time: 133.276ms
+dtoh time: 8.4441ms
+total time: 150.314ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 120
+CPU time: 3.01235ms
+htod time: 3.06336ms
+kernel time: 123.033ms
+dtoh time: 5.44214ms
+total time: 134.551ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 61
+CPU time: 2.83243ms
+htod time: 1.93325ms
+kernel time: 115.69ms
+dtoh time: 3.88846ms
+total time: 124.344ms
+*********************************************
+checkSum: 3836bf
+checkSum1: 22203	checkSum2: 2746655	checkSum3: 1149211
+*********************************************
+
+
+bdibda
+SegLRC_Generator
+dataset = bdibda
+reading /media/indexDisk/naiyong/dataset/bdibda/bdibda.ind1
+reading /media/indexDisk/naiyong/dataset/bdibda/bdibda.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+10.000000%...
+20.000000%...
+30.000002%...
+40.000000%...
+50.000000%...
+60.000004%...
+70.000000%...
+80.000000%...
+90.000000%...
+SegLRC_Compression
+dataset = bdibda
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.50872
+
+SegLRC_Intersection
+dataset = bdibda
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/bdibda.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/bdibda.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 14752
+CPU time: 27.5792ms
+htod time: 398.76ms
+kernel time: 1541.36ms
+dtoh time: 310.859ms
+total time: 2278.56ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 11584
+CPU time: 21.659ms
+htod time: 313.594ms
+kernel time: 1238.14ms
+dtoh time: 255.409ms
+total time: 1828.8ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 8664
+CPU time: 16.1642ms
+htod time: 234.628ms
+kernel time: 953.881ms
+dtoh time: 200.494ms
+total time: 1405.17ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 6144
+CPU time: 11.6212ms
+htod time: 166.81ms
+kernel time: 702.583ms
+dtoh time: 149.085ms
+total time: 1030.1ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 4079
+CPU time: 8.07246ms
+htod time: 111.2ms
+kernel time: 498.017ms
+dtoh time: 103.575ms
+total time: 720.864ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 2538
+CPU time: 5.52944ms
+htod time: 69.6959ms
+kernel time: 350.707ms
+dtoh time: 66.6663ms
+total time: 492.599ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 1492
+CPU time: 4.20522ms
+htod time: 41.3146ms
+kernel time: 252.178ms
+dtoh time: 40.6035ms
+total time: 338.301ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 826
+CPU time: 3.94577ms
+htod time: 23.4391ms
+kernel time: 187.817ms
+dtoh time: 23.6588ms
+total time: 238.861ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 444
+CPU time: 3.53187ms
+htod time: 13.0871ms
+kernel time: 152.868ms
+dtoh time: 13.8192ms
+total time: 183.306ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 235
+CPU time: 3.51435ms
+htod time: 7.50373ms
+kernel time: 135.025ms
+dtoh time: 8.52022ms
+total time: 154.563ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 120
+CPU time: 3.2763ms
+htod time: 4.3747ms
+kernel time: 124.747ms
+dtoh time: 5.42656ms
+total time: 137.825ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 61
+CPU time: 3.3133ms
+htod time: 2.66619ms
+kernel time: 117.536ms
+dtoh time: 3.88619ms
+total time: 127.402ms
+*********************************************
+checkSum: 472695
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7248394
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = bdibda
+reading /media/indexDisk/naiyong/dataset/bdibda/bdibda.ind1
+reading /media/indexDisk/naiyong/dataset/bdibda/bdibda.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+10.000000%...
+20.000000%...
+30.000002%...
+40.000000%...
+50.000000%...
+60.000004%...
+70.000000%...
+80.000000%...
+90.000000%...
+HS256_SegLRC_Compression
+dataset = bdibda
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.20323
+
+HS256_SegLRC_Intersection
+dataset = bdibda
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/bdibda.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/bdibda.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 14752
+CPU time: 27.6091ms
+htod time: 289.023ms
+kernel time: 1512.88ms
+dtoh time: 313.913ms
+total time: 2143.43ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 11584
+CPU time: 21.7286ms
+htod time: 227.038ms
+kernel time: 1212.68ms
+dtoh time: 257.573ms
+total time: 1719.02ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 8664
+CPU time: 16.2854ms
+htod time: 169.936ms
+kernel time: 931.494ms
+dtoh time: 202.179ms
+total time: 1319.9ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 6144
+CPU time: 11.6484ms
+htod time: 120.865ms
+kernel time: 686.263ms
+dtoh time: 150.513ms
+total time: 969.288ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 4079
+CPU time: 7.87735ms
+htod time: 80.5249ms
+kernel time: 485.61ms
+dtoh time: 104.545ms
+total time: 678.557ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 2538
+CPU time: 5.27563ms
+htod time: 50.2937ms
+kernel time: 342.492ms
+dtoh time: 67.0582ms
+total time: 465.12ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 1492
+CPU time: 3.91723ms
+htod time: 29.9381ms
+kernel time: 245.733ms
+dtoh time: 40.8623ms
+total time: 320.451ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 826
+CPU time: 3.4504ms
+htod time: 16.7973ms
+kernel time: 181.617ms
+dtoh time: 23.5697ms
+total time: 225.434ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 444
+CPU time: 3.2029ms
+htod time: 9.41439ms
+kernel time: 147.379ms
+dtoh time: 13.8121ms
+total time: 173.809ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 235
+CPU time: 2.99744ms
+htod time: 5.34834ms
+kernel time: 129.806ms
+dtoh time: 8.52784ms
+total time: 146.679ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 120
+CPU time: 2.85186ms
+htod time: 3.11285ms
+kernel time: 119.749ms
+dtoh time: 5.45061ms
+total time: 131.165ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 61
+CPU time: 2.7216ms
+htod time: 1.92048ms
+kernel time: 112.437ms
+dtoh time: 3.87397ms
+total time: 120.953ms
+*********************************************
+checkSum: 542cce
+checkSum1: 22203	checkSum2: 2746384	checkSum3: 8229477
+*********************************************
+
+
+bdr
+SegLRC_Generator
+dataset = bdr
+reading /media/indexDisk/naiyong/dataset/bdr/bdr.ind1
+reading /media/indexDisk/naiyong/dataset/bdr/bdr.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+10.000000%...
+20.000000%...
+30.000002%...
+40.000000%...
+50.000000%...
+60.000004%...
+70.000000%...
+80.000000%...
+90.000000%...
+SegLRC_Compression
+dataset = bdr
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.3472
+
+SegLRC_Intersection
+dataset = bdr
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/bdr.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/bdr.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 14752
+CPU time: 27.4407ms
+htod time: 399.54ms
+kernel time: 1487.99ms
+dtoh time: 309.236ms
+total time: 2224.2ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 11584
+CPU time: 21.5752ms
+htod time: 314.286ms
+kernel time: 1192.35ms
+dtoh time: 253.732ms
+total time: 1781.94ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 8664
+CPU time: 16.2877ms
+htod time: 235.718ms
+kernel time: 918.337ms
+dtoh time: 199.939ms
+total time: 1370.28ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 6144
+CPU time: 11.6023ms
+htod time: 167.199ms
+kernel time: 675.331ms
+dtoh time: 148.246ms
+total time: 1002.38ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 4079
+CPU time: 7.95236ms
+htod time: 111.312ms
+kernel time: 477.319ms
+dtoh time: 102.753ms
+total time: 699.336ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 2538
+CPU time: 5.40342ms
+htod time: 69.6852ms
+kernel time: 336.686ms
+dtoh time: 66.2322ms
+total time: 478.007ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 1492
+CPU time: 4.40602ms
+htod time: 41.3899ms
+kernel time: 241.02ms
+dtoh time: 40.3656ms
+total time: 327.181ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 826
+CPU time: 4.06067ms
+htod time: 23.3411ms
+kernel time: 177.95ms
+dtoh time: 23.4768ms
+total time: 228.828ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 444
+CPU time: 3.5261ms
+htod time: 13.0323ms
+kernel time: 143.87ms
+dtoh time: 13.6184ms
+total time: 174.047ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 235
+CPU time: 3.43128ms
+htod time: 7.44029ms
+kernel time: 126.354ms
+dtoh time: 8.3773ms
+total time: 145.603ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 120
+CPU time: 3.15525ms
+htod time: 4.34947ms
+kernel time: 116.469ms
+dtoh time: 5.37753ms
+total time: 129.351ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 61
+CPU time: 3.1237ms
+htod time: 2.63418ms
+kernel time: 109.291ms
+dtoh time: 3.7961ms
+total time: 118.845ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = bdr
+reading /media/indexDisk/naiyong/dataset/bdr/bdr.ind1
+reading /media/indexDisk/naiyong/dataset/bdr/bdr.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+10.000000%...
+20.000000%...
+30.000002%...
+40.000000%...
+50.000000%...
+60.000004%...
+70.000000%...
+80.000000%...
+90.000000%...
+HS256_SegLRC_Compression
+dataset = bdr
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.30711
+
+HS256_SegLRC_Intersection
+dataset = bdr
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/bdr.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/bdr.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 14752
+CPU time: 27.3092ms
+htod time: 289.808ms
+kernel time: 1497.04ms
+dtoh time: 318.311ms
+total time: 2132.47ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 11584
+CPU time: 21.7505ms
+htod time: 227.874ms
+kernel time: 1198.79ms
+dtoh time: 261.768ms
+total time: 1710.18ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 8664
+CPU time: 16.1285ms
+htod time: 170.531ms
+kernel time: 922.328ms
+dtoh time: 205.701ms
+total time: 1314.69ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 6144
+CPU time: 11.5541ms
+htod time: 121.299ms
+kernel time: 680.348ms
+dtoh time: 152.932ms
+total time: 966.132ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 4079
+CPU time: 8.00947ms
+htod time: 80.8774ms
+kernel time: 482.999ms
+dtoh time: 106.02ms
+total time: 677.906ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 2538
+CPU time: 5.24415ms
+htod time: 50.5542ms
+kernel time: 343.464ms
+dtoh time: 68.311ms
+total time: 467.573ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 1492
+CPU time: 3.90784ms
+htod time: 29.9406ms
+kernel time: 246.561ms
+dtoh time: 41.4078ms
+total time: 321.818ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 826
+CPU time: 3.54224ms
+htod time: 16.9202ms
+kernel time: 182.775ms
+dtoh time: 23.9696ms
+total time: 227.207ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 444
+CPU time: 3.19952ms
+htod time: 9.45317ms
+kernel time: 148.288ms
+dtoh time: 14.0369ms
+total time: 174.978ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 235
+CPU time: 2.92058ms
+htod time: 5.33725ms
+kernel time: 130.66ms
+dtoh time: 8.51155ms
+total time: 147.429ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 120
+CPU time: 2.73387ms
+htod time: 3.07757ms
+kernel time: 120.462ms
+dtoh time: 5.43705ms
+total time: 131.71ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 61
+CPU time: 2.8687ms
+htod time: 1.95296ms
+kernel time: 113.36ms
+dtoh time: 3.94544ms
+total time: 122.127ms
+*********************************************
+checkSum: fca007
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 13966488
+*********************************************
+
+
+bdtmf
+SegLRC_Generator
+dataset = bdtmf
+reading /media/indexDisk/naiyong/dataset/bdtmf/bdtmf.ind1
+reading /media/indexDisk/naiyong/dataset/bdtmf/bdtmf.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+10.000000%...
+20.000000%...
+30.000002%...
+40.000000%...
+50.000000%...
+60.000004%...
+70.000000%...
+80.000000%...
+90.000000%...
+SegLRC_Compression
+dataset = bdtmf
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.71613
+
+SegLRC_Intersection
+dataset = bdtmf
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/bdtmf.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/bdtmf.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 14752
+CPU time: 27.5135ms
+htod time: 402.561ms
+kernel time: 1553.88ms
+dtoh time: 312.702ms
+total time: 2296.66ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 11584
+CPU time: 21.6843ms
+htod time: 316.611ms
+kernel time: 1247.05ms
+dtoh time: 257.053ms
+total time: 1842.39ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 8664
+CPU time: 16.2941ms
+htod time: 236.799ms
+kernel time: 959.37ms
+dtoh time: 201.718ms
+total time: 1414.18ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 6144
+CPU time: 11.7757ms
+htod time: 168.768ms
+kernel time: 708.799ms
+dtoh time: 151.031ms
+total time: 1040.37ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 4079
+CPU time: 8.03133ms
+htod time: 112.162ms
+kernel time: 498.056ms
+dtoh time: 103.921ms
+total time: 722.171ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 2538
+CPU time: 5.40689ms
+htod time: 70.1809ms
+kernel time: 348.35ms
+dtoh time: 66.92ms
+total time: 490.858ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 1492
+CPU time: 4.26735ms
+htod time: 41.5744ms
+kernel time: 248.306ms
+dtoh time: 40.5319ms
+total time: 334.679ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 826
+CPU time: 3.96889ms
+htod time: 23.5532ms
+kernel time: 183.835ms
+dtoh time: 23.5882ms
+total time: 234.945ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 444
+CPU time: 3.5474ms
+htod time: 13.1047ms
+kernel time: 148.487ms
+dtoh time: 13.677ms
+total time: 178.816ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 235
+CPU time: 3.29627ms
+htod time: 7.49071ms
+kernel time: 130.713ms
+dtoh time: 8.37607ms
+total time: 149.876ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 120
+CPU time: 3.17193ms
+htod time: 4.39722ms
+kernel time: 120.605ms
+dtoh time: 5.39387ms
+total time: 133.568ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 61
+CPU time: 2.94707ms
+htod time: 2.6209ms
+kernel time: 113.278ms
+dtoh time: 3.78091ms
+total time: 122.626ms
+*********************************************
+checkSum: 5d1c65
+checkSum1: 22203	checkSum2: 2746916	checkSum3: 7643386
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = bdtmf
+reading /media/indexDisk/naiyong/dataset/bdtmf/bdtmf.ind1
+reading /media/indexDisk/naiyong/dataset/bdtmf/bdtmf.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+10.000000%...
+20.000000%...
+30.000002%...
+40.000000%...
+50.000000%...
+60.000004%...
+70.000000%...
+80.000000%...
+90.000000%...
+HS256_SegLRC_Compression
+dataset = bdtmf
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.31162
+
+HS256_SegLRC_Intersection
+dataset = bdtmf
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/bdtmf.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/bdtmf.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 14752
+CPU time: 27.6515ms
+htod time: 285.879ms
+kernel time: 1498.54ms
+dtoh time: 311.234ms
+total time: 2123.3ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 11584
+CPU time: 21.7417ms
+htod time: 224.739ms
+kernel time: 1199.09ms
+dtoh time: 254.992ms
+total time: 1700.56ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 8664
+CPU time: 16.3325ms
+htod time: 167.916ms
+kernel time: 922.681ms
+dtoh time: 200.405ms
+total time: 1307.33ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 6144
+CPU time: 11.5118ms
+htod time: 119.444ms
+kernel time: 676.786ms
+dtoh time: 149.028ms
+total time: 956.77ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 4079
+CPU time: 7.85065ms
+htod time: 79.4933ms
+kernel time: 476.51ms
+dtoh time: 103.305ms
+total time: 667.159ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 2538
+CPU time: 5.18258ms
+htod time: 49.7556ms
+kernel time: 335.596ms
+dtoh time: 66.648ms
+total time: 457.182ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 1492
+CPU time: 3.82614ms
+htod time: 29.4797ms
+kernel time: 239.075ms
+dtoh time: 40.424ms
+total time: 312.805ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 826
+CPU time: 3.62438ms
+htod time: 16.6722ms
+kernel time: 176.503ms
+dtoh time: 23.5944ms
+total time: 220.394ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 444
+CPU time: 3.33374ms
+htod time: 9.25904ms
+kernel time: 142.436ms
+dtoh time: 13.6769ms
+total time: 168.705ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 235
+CPU time: 3.11587ms
+htod time: 5.28755ms
+kernel time: 125.011ms
+dtoh time: 8.39025ms
+total time: 141.805ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 120
+CPU time: 2.75544ms
+htod time: 3.06637ms
+kernel time: 115.201ms
+dtoh time: 5.40929ms
+total time: 126.432ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 33337
+number of batches: 61
+CPU time: 2.69808ms
+htod time: 1.91362ms
+kernel time: 108.013ms
+dtoh time: 3.84525ms
+total time: 116.47ms
+*********************************************
+checkSum: cd5f6
+checkSum1: 22204	checkSum2: 2745872	checkSum3: 2450778
+*********************************************
+
+
+gov2
+SegLRC_Generator
+dataset = gov2
+reading /media/indexDisk/naiyong/dataset/gov2/gov2.ind1
+reading /media/indexDisk/naiyong/dataset/gov2/gov2.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+SegLRC_Compression
+dataset = gov2
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.27817
+
+SegLRC_Intersection
+dataset = gov2
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 181.142ms
+htod time: 2464.22ms
+kernel time: 30154.1ms
+dtoh time: 6478.22ms
+total time: 39277.7ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 175.167ms
+htod time: 2372.82ms
+kernel time: 29766.3ms
+dtoh time: 6392.46ms
+total time: 38706.7ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 166.87ms
+htod time: 2235.81ms
+kernel time: 29282.5ms
+dtoh time: 6257.16ms
+total time: 37942.4ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 156.362ms
+htod time: 2078.87ms
+kernel time: 28704.1ms
+dtoh time: 6111.89ms
+total time: 37051.2ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 144.191ms
+htod time: 1881.16ms
+kernel time: 28003.9ms
+dtoh time: 5928.75ms
+total time: 35958ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 128.839ms
+htod time: 1639.22ms
+kernel time: 27193ms
+dtoh time: 5702.54ms
+total time: 34663.6ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 113.389ms
+htod time: 1379.7ms
+kernel time: 26311.3ms
+dtoh time: 5456.9ms
+total time: 33261.3ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 99.0916ms
+htod time: 1129.93ms
+kernel time: 25503.1ms
+dtoh time: 5218.88ms
+total time: 31951ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 85.9411ms
+htod time: 859.547ms
+kernel time: 24681ms
+dtoh time: 4954.66ms
+total time: 30581.1ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 81.0479ms
+htod time: 603.442ms
+kernel time: 23932.9ms
+dtoh time: 4686.7ms
+total time: 29304.1ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 81.5862ms
+htod time: 399.466ms
+kernel time: 23345.6ms
+dtoh time: 4435.36ms
+total time: 28262.1ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 74.6881ms
+htod time: 246.557ms
+kernel time: 22736.1ms
+dtoh time: 4163.36ms
+total time: 27220.7ms
+*********************************************
+checkSum: 17a590f06
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 32065529
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = gov2
+reading /media/indexDisk/naiyong/dataset/gov2/gov2.ind1
+reading /media/indexDisk/naiyong/dataset/gov2/gov2.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+HS256_SegLRC_Compression
+dataset = gov2
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.20043
+
+HS256_SegLRC_Intersection
+dataset = gov2
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 181.965ms
+htod time: 1760.3ms
+kernel time: 28579.4ms
+dtoh time: 6463.17ms
+total time: 36984.8ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 176.09ms
+htod time: 1692.34ms
+kernel time: 28194.3ms
+dtoh time: 6362.71ms
+total time: 36425.4ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 167.503ms
+htod time: 1603.03ms
+kernel time: 27738.2ms
+dtoh time: 6246.74ms
+total time: 35755.4ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 157.198ms
+htod time: 1492.88ms
+kernel time: 27187.1ms
+dtoh time: 6105.7ms
+total time: 34942.9ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 143.822ms
+htod time: 1350.05ms
+kernel time: 26489.6ms
+dtoh time: 5915.6ms
+total time: 33899.1ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 128.097ms
+htod time: 1177.4ms
+kernel time: 25678.8ms
+dtoh time: 5689.74ms
+total time: 32674.1ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 111.693ms
+htod time: 992.72ms
+kernel time: 24804.8ms
+dtoh time: 5447.36ms
+total time: 31356.6ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 97.2ms
+htod time: 815.277ms
+kernel time: 24003.8ms
+dtoh time: 5212.71ms
+total time: 30129ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 82.1792ms
+htod time: 620.908ms
+kernel time: 23174.9ms
+dtoh time: 4946.49ms
+total time: 28824.5ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 74.3188ms
+htod time: 437.662ms
+kernel time: 22418.9ms
+dtoh time: 4681.79ms
+total time: 27612.6ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 76.1081ms
+htod time: 292.007ms
+kernel time: 21830.3ms
+dtoh time: 4433ms
+total time: 26631.4ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 69.3719ms
+htod time: 182.161ms
+kernel time: 21216.7ms
+dtoh time: 4165.5ms
+total time: 25633.8ms
+*********************************************
+checkSum: 17a8ce55a
+checkSum1: 1605	checkSum2: 6370118174	checkSum3: 20752641
+*********************************************
+
+
+gov2ibda
+SegLRC_Generator
+dataset = gov2ibda
+reading /media/indexDisk/naiyong/dataset/gov2ibda/gov2ibda.ind1
+reading /media/indexDisk/naiyong/dataset/gov2ibda/gov2ibda.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+SegLRC_Compression
+dataset = gov2ibda
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.50119
+
+SegLRC_Intersection
+dataset = gov2ibda
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2ibda.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2ibda.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 184.58ms
+htod time: 2442.64ms
+kernel time: 30219.3ms
+dtoh time: 6479.9ms
+total time: 39326.4ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 178.486ms
+htod time: 2352.91ms
+kernel time: 29797.6ms
+dtoh time: 6385.09ms
+total time: 38714.1ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 170.44ms
+htod time: 2219.3ms
+kernel time: 29306.9ms
+dtoh time: 6258.58ms
+total time: 37955.2ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 159.36ms
+htod time: 2064.53ms
+kernel time: 28713.9ms
+dtoh time: 6113.82ms
+total time: 37051.6ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 146.942ms
+htod time: 1865.62ms
+kernel time: 27986ms
+dtoh time: 5926.72ms
+total time: 35925.3ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 131.415ms
+htod time: 1627.74ms
+kernel time: 27150.5ms
+dtoh time: 5702.04ms
+total time: 34611.7ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 115.847ms
+htod time: 1370.27ms
+kernel time: 26236.5ms
+dtoh time: 5460.54ms
+total time: 33183.2ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 101.51ms
+htod time: 1123.53ms
+kernel time: 25393.5ms
+dtoh time: 5224.17ms
+total time: 31842.8ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 88.9191ms
+htod time: 854.281ms
+kernel time: 24540.9ms
+dtoh time: 4960.46ms
+total time: 30444.5ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 83.7497ms
+htod time: 600.139ms
+kernel time: 23763.7ms
+dtoh time: 4694.65ms
+total time: 29142.2ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 83.0474ms
+htod time: 398.298ms
+kernel time: 23160.1ms
+dtoh time: 4442.02ms
+total time: 28083.5ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 75.4452ms
+htod time: 245.043ms
+kernel time: 22541.1ms
+dtoh time: 4167.18ms
+total time: 27028.8ms
+*********************************************
+checkSum: 17a86a3b9
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 20376390
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = gov2ibda
+reading /media/indexDisk/naiyong/dataset/gov2ibda/gov2ibda.ind1
+reading /media/indexDisk/naiyong/dataset/gov2ibda/gov2ibda.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+HS256_SegLRC_Compression
+dataset = gov2ibda
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.21138
+
+HS256_SegLRC_Intersection
+dataset = gov2ibda
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2ibda.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2ibda.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 180.056ms
+htod time: 1758.51ms
+kernel time: 28627.9ms
+dtoh time: 6462.75ms
+total time: 37029.2ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 174.349ms
+htod time: 1695.12ms
+kernel time: 27744.3ms
+dtoh time: 6374.91ms
+total time: 35988.7ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 166.006ms
+htod time: 1601.72ms
+kernel time: 27268ms
+dtoh time: 6246.51ms
+total time: 35282.2ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 155.729ms
+htod time: 1490.03ms
+kernel time: 26699ms
+dtoh time: 6102.41ms
+total time: 34447.2ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 142.653ms
+htod time: 1348.96ms
+kernel time: 25991.2ms
+dtoh time: 5918.12ms
+total time: 33400.9ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 127.143ms
+htod time: 1176.74ms
+kernel time: 25156.7ms
+dtoh time: 5692.54ms
+total time: 32153.1ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 111.459ms
+htod time: 992.91ms
+kernel time: 24275ms
+dtoh time: 5452.39ms
+total time: 30831.7ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 96.4794ms
+htod time: 813.459ms
+kernel time: 23458.9ms
+dtoh time: 5213.72ms
+total time: 29582.6ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 83.414ms
+htod time: 620.54ms
+kernel time: 22645.1ms
+dtoh time: 4951.14ms
+total time: 28300.2ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 75.2299ms
+htod time: 437.404ms
+kernel time: 21893.7ms
+dtoh time: 4684.12ms
+total time: 27090.5ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 76.8196ms
+htod time: 291.554ms
+kernel time: 21305.9ms
+dtoh time: 4434.03ms
+total time: 26108.3ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 69.8317ms
+htod time: 181.517ms
+kernel time: 20698.8ms
+dtoh time: 4167.16ms
+total time: 25117.3ms
+*********************************************
+checkSum: 17974df5b
+checkSum1: 1606	checkSum2: 6369825623	checkSum3: 48171594
+*********************************************
+
+
+gov2r
+SegLRC_Generator
+dataset = gov2r
+reading /media/indexDisk/naiyong/dataset/gov2r/gov2r.ind1
+reading /media/indexDisk/naiyong/dataset/gov2r/gov2r.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+SegLRC_Compression
+dataset = gov2r
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.24582
+
+SegLRC_Intersection
+dataset = gov2r
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2r.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2r.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 182.209ms
+htod time: 2432.12ms
+kernel time: 27034.8ms
+dtoh time: 6441.85ms
+total time: 36091ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 175.959ms
+htod time: 2344ms
+kernel time: 26608.9ms
+dtoh time: 6358.45ms
+total time: 35487.3ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 167.425ms
+htod time: 2221.52ms
+kernel time: 26162.5ms
+dtoh time: 6241.47ms
+total time: 34792.9ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 157.748ms
+htod time: 2068.05ms
+kernel time: 25610.9ms
+dtoh time: 6089.88ms
+total time: 33926.6ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 144.244ms
+htod time: 1871.39ms
+kernel time: 24933.7ms
+dtoh time: 5902.71ms
+total time: 32852.1ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 128.872ms
+htod time: 1631.7ms
+kernel time: 24150.1ms
+dtoh time: 5675.01ms
+total time: 31585.7ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 112.301ms
+htod time: 1373.8ms
+kernel time: 23293.1ms
+dtoh time: 5431.57ms
+total time: 30210.8ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 97.9319ms
+htod time: 1126.93ms
+kernel time: 22510.4ms
+dtoh time: 5194.72ms
+total time: 28930ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 83.8082ms
+htod time: 857.205ms
+kernel time: 21715.7ms
+dtoh time: 4929.09ms
+total time: 27585.8ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 77.6419ms
+htod time: 602.035ms
+kernel time: 20989ms
+dtoh time: 4661.75ms
+total time: 26330.4ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 77.8633ms
+htod time: 399.334ms
+kernel time: 20422.2ms
+dtoh time: 4410.56ms
+total time: 25310ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 70.9168ms
+htod time: 245.775ms
+kernel time: 19828.8ms
+dtoh time: 4142.38ms
+total time: 24287.9ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = gov2r
+reading /media/indexDisk/naiyong/dataset/gov2r/gov2r.ind1
+reading /media/indexDisk/naiyong/dataset/gov2r/gov2r.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+HS256_SegLRC_Compression
+dataset = gov2r
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.22831
+
+HS256_SegLRC_Intersection
+dataset = gov2r
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2r.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2r.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 183.079ms
+htod time: 1753.63ms
+kernel time: 28941.3ms
+dtoh time: 6485.06ms
+total time: 37363ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 176.753ms
+htod time: 1688.46ms
+kernel time: 28556.3ms
+dtoh time: 6399.28ms
+total time: 36820.8ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 168.38ms
+htod time: 1599.33ms
+kernel time: 28116.9ms
+dtoh time: 6281.55ms
+total time: 36166.2ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 158.084ms
+htod time: 1489.15ms
+kernel time: 27571.8ms
+dtoh time: 6135.95ms
+total time: 35355ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 145.614ms
+htod time: 1349.19ms
+kernel time: 26898.9ms
+dtoh time: 5956.69ms
+total time: 34350.4ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 129.166ms
+htod time: 1175.78ms
+kernel time: 26087.4ms
+dtoh time: 5725.91ms
+total time: 33118.2ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 112.877ms
+htod time: 992.576ms
+kernel time: 25217ms
+dtoh time: 5484.81ms
+total time: 31807.2ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 98.0991ms
+htod time: 813.339ms
+kernel time: 24404.3ms
+dtoh time: 5246.6ms
+total time: 30562.3ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 84.5805ms
+htod time: 621.317ms
+kernel time: 23578.3ms
+dtoh time: 4982.68ms
+total time: 29266.9ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 77.9241ms
+htod time: 437.865ms
+kernel time: 22817.2ms
+dtoh time: 4712.85ms
+total time: 28045.8ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 77.5721ms
+htod time: 292.401ms
+kernel time: 22224ms
+dtoh time: 4456.59ms
+total time: 27050.6ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 70.5281ms
+htod time: 182.084ms
+kernel time: 21604.5ms
+dtoh time: 4182.26ms
+total time: 26039.4ms
+*********************************************
+checkSum: 17bfc898c
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5030259
+*********************************************
+
+
+gov2tmf
+SegLRC_Generator
+dataset = gov2tmf
+reading /media/indexDisk/naiyong/dataset/gov2tmf/gov2tmf.ind1
+reading /media/indexDisk/naiyong/dataset/gov2tmf/gov2tmf.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+SegLRC_Compression
+dataset = gov2tmf
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.852
+
+SegLRC_Intersection
+dataset = gov2tmf
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2tmf.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2tmf.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 182.235ms
+htod time: 2439.86ms
+kernel time: 29891ms
+dtoh time: 6508.72ms
+total time: 39021.8ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 176.209ms
+htod time: 2351.79ms
+kernel time: 29465.6ms
+dtoh time: 6417.97ms
+total time: 38411.6ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 168.474ms
+htod time: 2228.82ms
+kernel time: 28996ms
+dtoh time: 6302.25ms
+total time: 37695.6ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 158.338ms
+htod time: 2074.35ms
+kernel time: 28406.9ms
+dtoh time: 6157.73ms
+total time: 36797.3ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 145.129ms
+htod time: 1876.2ms
+kernel time: 27681.4ms
+dtoh time: 5972.49ms
+total time: 35675.3ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 129.763ms
+htod time: 1634.25ms
+kernel time: 26847.9ms
+dtoh time: 5747.09ms
+total time: 34359ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 113.645ms
+htod time: 1376.81ms
+kernel time: 25929.6ms
+dtoh time: 5503.11ms
+total time: 32923.2ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 99.6235ms
+htod time: 1127.93ms
+kernel time: 25089.4ms
+dtoh time: 5265.34ms
+total time: 31582.3ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 86.1596ms
+htod time: 858.287ms
+kernel time: 24240.6ms
+dtoh time: 5001.02ms
+total time: 30186.1ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 80.7914ms
+htod time: 602.935ms
+kernel time: 23464.9ms
+dtoh time: 4734.34ms
+total time: 28883ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 81.1323ms
+htod time: 400.16ms
+kernel time: 22868.3ms
+dtoh time: 4484.6ms
+total time: 27834.2ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 73.8225ms
+htod time: 247.253ms
+kernel time: 22253.6ms
+dtoh time: 4209.01ms
+total time: 26783.7ms
+*********************************************
+checkSum: 17be331df
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 5470496
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = gov2tmf
+reading /media/indexDisk/naiyong/dataset/gov2tmf/gov2tmf.ind1
+reading /media/indexDisk/naiyong/dataset/gov2tmf/gov2tmf.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+HS256_SegLRC_Compression
+dataset = gov2tmf
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.46793
+
+HS256_SegLRC_Intersection
+dataset = gov2tmf
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2tmf.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2tmf.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 181.34ms
+htod time: 1757.02ms
+kernel time: 27559.5ms
+dtoh time: 6466.15ms
+total time: 35964ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 175.39ms
+htod time: 1691.01ms
+kernel time: 27180ms
+dtoh time: 6378.68ms
+total time: 35425.1ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 167.042ms
+htod time: 1599.08ms
+kernel time: 26708.2ms
+dtoh time: 6246.4ms
+total time: 34720.8ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 156.612ms
+htod time: 1486.95ms
+kernel time: 26131.6ms
+dtoh time: 6097.86ms
+total time: 33873ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 143.894ms
+htod time: 1345.36ms
+kernel time: 25427.3ms
+dtoh time: 5916.81ms
+total time: 32833.4ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 128.148ms
+htod time: 1173.41ms
+kernel time: 24592.7ms
+dtoh time: 5690.6ms
+total time: 31584.8ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 111.679ms
+htod time: 989.584ms
+kernel time: 23711ms
+dtoh time: 5451.19ms
+total time: 30263.5ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 96.9111ms
+htod time: 812.023ms
+kernel time: 22901.4ms
+dtoh time: 5214.78ms
+total time: 29025.2ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 82.8122ms
+htod time: 618.94ms
+kernel time: 22082.1ms
+dtoh time: 4953.33ms
+total time: 27737.2ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 75.2065ms
+htod time: 436.901ms
+kernel time: 21333.4ms
+dtoh time: 4686.77ms
+total time: 26532.3ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 76.7942ms
+htod time: 291.68ms
+kernel time: 20747.1ms
+dtoh time: 4433.67ms
+total time: 25549.3ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 69.8459ms
+htod time: 181.999ms
+kernel time: 20138.6ms
+dtoh time: 4161.24ms
+total time: 24551.7ms
+*********************************************
+checkSum: 17ad473e9
+checkSum1: 1608	checkSum2: 6369552381	checkSum3: 24367708
+*********************************************
+
+
+gov2url
+SegLRC_Generator
+dataset = gov2url
+reading /media/indexDisk/naiyong/dataset/gov2url/gov2url.ind1
+reading /media/indexDisk/naiyong/dataset/gov2url/gov2url.ind2
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+SegLRC_Compression
+dataset = gov2url
+step = 0, FRAC = 0
+reading ind1...
+compressing...
+compressiong raito = 2.74119
+
+SegLRC_Intersection
+dataset = gov2url
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2url.ind1
+reading /media/indexDisk/naiyong/data/SegLRC/Compression/0/gov2url.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 180.871ms
+htod time: 2443.91ms
+kernel time: 30115.2ms
+dtoh time: 6496.43ms
+total time: 39236.4ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 175.461ms
+htod time: 2357.08ms
+kernel time: 29694.3ms
+dtoh time: 6412.22ms
+total time: 38639.1ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 166.701ms
+htod time: 2234.44ms
+kernel time: 29217.9ms
+dtoh time: 6291.11ms
+total time: 37910.2ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 156.978ms
+htod time: 2078.29ms
+kernel time: 28623.7ms
+dtoh time: 6145.08ms
+total time: 37004ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 143.601ms
+htod time: 1881.43ms
+kernel time: 27905.6ms
+dtoh time: 5988.93ms
+total time: 35919.6ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 128.177ms
+htod time: 1638.15ms
+kernel time: 27068ms
+dtoh time: 5760.97ms
+total time: 34595.3ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 111.695ms
+htod time: 1380.5ms
+kernel time: 26149.7ms
+dtoh time: 5517.32ms
+total time: 33159.2ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 97.2828ms
+htod time: 1131.19ms
+kernel time: 25304.8ms
+dtoh time: 5277.76ms
+total time: 31811ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 83.404ms
+htod time: 860.606ms
+kernel time: 24447.2ms
+dtoh time: 5011.14ms
+total time: 30402.4ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 76.5341ms
+htod time: 604.76ms
+kernel time: 23656.6ms
+dtoh time: 4740.24ms
+total time: 29078.1ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 77.6701ms
+htod time: 400.901ms
+kernel time: 23038.6ms
+dtoh time: 4483.98ms
+total time: 28001.1ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 70.8439ms
+htod time: 246.937ms
+kernel time: 22410.2ms
+dtoh time: 4208.55ms
+total time: 26936.5ms
+*********************************************
+checkSum: 17ab7279f
+checkSum1: 1605	checkSum2: 6370119354	checkSum3: 17264480
+*********************************************
+
+
+HS256_SegLRC_Generator
+dataset = gov2url
+reading /media/indexDisk/naiyong/dataset/gov2url/gov2url.ind1
+reading /media/indexDisk/naiyong/dataset/gov2url/gov2url.ind2
+Getting hash info...
+Getting regression info...
+Generating ind2 distance...
+0.000000%...
+9.999995%...
+19.999990%...
+29.999987%...
+39.999981%...
+49.999981%...
+59.999973%...
+69.999969%...
+79.999962%...
+89.999962%...
+99.999962%...
+HS256_SegLRC_Compression
+dataset = gov2url
+step = 0, FRAC = 0
+reading at_HashSeg_offset...
+reading at_HashSeg_info...
+reading ind1...
+compressing...
+compressiong raito = 2.35808
+
+HS256_SegLRC_Intersection
+dataset = gov2url
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2url.ind1
+reading /media/indexDisk/naiyong/data/HS_SegLRC/Compression/0/gov2url.ind2
+begin calculating...
+Threshold: 1K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 88562
+CPU time: 182.779ms
+htod time: 1757.4ms
+kernel time: 27853.5ms
+dtoh time: 6447.83ms
+total time: 36241.5ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 2K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 85297
+CPU time: 176.947ms
+htod time: 1691.36ms
+kernel time: 27466.2ms
+dtoh time: 6362.26ms
+total time: 35696.8ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 4K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 80752
+CPU time: 167.979ms
+htod time: 1603.36ms
+kernel time: 27015.7ms
+dtoh time: 6247.6ms
+total time: 35034.7ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 8K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 75052
+CPU time: 157.899ms
+htod time: 1492.43ms
+kernel time: 26451.7ms
+dtoh time: 6102.2ms
+total time: 34204.2ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 16K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 67787
+CPU time: 145.158ms
+htod time: 1350.93ms
+kernel time: 25750.1ms
+dtoh time: 5928.63ms
+total time: 33174.9ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 32K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 58938
+CPU time: 129.107ms
+htod time: 1177.21ms
+kernel time: 24922.9ms
+dtoh time: 5701.47ms
+total time: 31930.7ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 64K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 49492
+CPU time: 112.66ms
+htod time: 992.976ms
+kernel time: 24023.6ms
+dtoh time: 5457.61ms
+total time: 30586.9ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 128K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 40375
+CPU time: 98.9009ms
+htod time: 816.157ms
+kernel time: 23203.6ms
+dtoh time: 5224.12ms
+total time: 29342.8ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 256K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 30479
+CPU time: 84.2415ms
+htod time: 621.228ms
+kernel time: 22360.7ms
+dtoh time: 4951.65ms
+total time: 28017.9ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 512K, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 21130
+CPU time: 76.8981ms
+htod time: 436.911ms
+kernel time: 21577.8ms
+dtoh time: 4679.98ms
+total time: 26771.6ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 1M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 13729
+CPU time: 77.5609ms
+htod time: 291.321ms
+kernel time: 20974.9ms
+dtoh time: 4428.88ms
+total time: 25772.7ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+begin calculating...
+Threshold: 2M, THREAD_NUM: 256
+number of queries: 99100
+number of batches: 8164
+CPU time: 70.2766ms
+htod time: 181.824ms
+kernel time: 20352.6ms
+dtoh time: 4157.84ms
+total time: 24762.5ms
+*********************************************
+checkSum: 17bd7c8bf
+checkSum1: 1606	checkSum2: 6369052243	checkSum3: 7850154
+*********************************************
+
+
