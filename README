@@ -14,7 +14,8 @@ It is expanded with:
     More details in directory src/core/CLucene/search & src/wand(WAND & BMW)
  4. Cache framework
     More details in directory src/contribs-lib/CLucene/cache & src/contribs/searching
-
+ 5. GPU list intersections
+    All codes in directory src/gpu. It needs support by cudpp-2.2, which can be accquired in https://github.com/cudpp/cudpp
 
 ==========================================
 CLucene README
