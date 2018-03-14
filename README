@@ -9,9 +9,8 @@ It is expanded with:
     More details in directory text_process.
  2. Index compression. 
     More details in directory src/contribs-lib/CLucene/benchCompression(encoding library)
-    & grammar-based compression in directory src/contribs/src/contribs/readindex
  3. Query processing.
-    More details in directory src/core/CLucene/search & src/wand(WAND & BMW)
+    More details in directory src/core/CLucene/search & src/wand(WAND)
  4. Cache framework
     More details in directory src/contribs-lib/CLucene/cache & src/contribs/searching
  5. GPU list intersections
